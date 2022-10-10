@@ -36,7 +36,8 @@ world.load_world('Town05')
 ```
 find more information about CARLA map [here](https://carla.readthedocs.io/en/latest/core_map/) 
 
-The spectator and its properties can be accessed and manipulated through the Python API:
+The spectator and its properties can be accessed and manipulated through the Python API: 
+#通过 Python API 访问和操作观众及其属性
 ```bash
 # Retrieve the spectator object
 spectator = world.get_spectator()
