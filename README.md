@@ -36,7 +36,8 @@ world.load_world('Town05')
 ```
 find more information about CARLA map [here](https://carla.readthedocs.io/en/latest/core_map/) 
 
-<strike>
+
+<s>
 The spectator and its properties can be accessed and manipulated through the Python API: 
 #通过 Python API 访问和操作观众及其属性
 ```bash
@@ -54,7 +55,8 @@ spectator.set_transform(carla.Transform())
 # This will set the spectator at the origin of the map, with 0 degrees
 # pitch, yaw and roll - a good way to orient yourself in the map
 ```
-</strike>
+</s>
+
 
 ## Adding NPCs（2022.10.11  under construction）
 
