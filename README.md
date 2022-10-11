@@ -56,16 +56,14 @@ spectator.set_transform(carla.Transform())
 ```
 </s>
 
-## change the weather
+## Change the weather
 ```bash
-weather = carla.WeatherParameters(cloudiness=10.0,
-                                  precipitation=10.0,
-                                  fog_density=10.0)
+weather = carla.WeatherParameters(cloudiness=10.0,precipitation=10.0,fog_density=10.0)
 world.set_weather(weather)
 ```
 
-## Adding Actor（2022.10.11  under construction）
-If you want to spawn(生成) Actors ，firstly you must defind its Blueprint
+## Spawn Actor（2022.10.11  under construction）
+* If you want to spawn(生成) Actors ，firstly you must defind its Blueprint
 ```
 #load blueprint for all objects
 blueprint_library = world.get_blueprint_library()
@@ -74,8 +72,34 @@ ego_vehicle_bp = blueprint_library.find('vehicle.mercedes-benz.coupe')
 #choice a colar for the car
 ```
 
+* After builing blueprint,we should set a birth point for the car.birth point not only can be set in a particular place,but also can be set in random place.The place we settle these cars must free space,for example we can't put a car on the tree or in the see.
+```
+#Find all the positions that can be used as initial points and choose one at random
+transform = random.choice(world.get_map().get_spawn_points())
+#spawn a car in this position
+ego_vehicle = world.spawn_actor(ego_vehicle_bp, transform)
+```
+## Operate the car
+we can movie the car through definding its initial position&dynamic function
+```
+#move the car
+location = ego_vehicle.get_location()
+location.x += 10.0
+ego_vehicle.set_location(location)
+#set the car into auto pattern
+ego_vehicle.set_autopilot(True)
+#we even can freeze the car throught kill its physics simulation
+# actor.set_simulate_physics(False)
+```
 
-
+## Destroy Actor
+Remember to destroy the car after running the script, otherwise it will always exist in the simulation world, which may affect the operation of other scripts
+```
+#destory single Actor
+ego_vehicle.destroy()
+#if you have many actors,you should put them into a list,and destroy them together
+client.apply_batch([carla.command.DestroyActor(x) for x in actor_list])
+```
 
 ## cautious
 ```bash
