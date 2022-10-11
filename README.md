@@ -21,7 +21,7 @@ world = client.get_world()
 ```
 
 
-
+s
 The port can be chosen as any available port and is set to 2000 by default, you can also choose a host different from localhost by using a computer's IP address. This way, the CARLA server can be run on a networked machine, while the python client can be run from a personal computer. 
 
 ## Loading a map
@@ -65,28 +65,28 @@ world.set_weather(weather)
 ## Spawn Actor（2022.10.11  under construction）
 * If you want to spawn(生成) Actors ，firstly you must defind its Blueprint
 ```
-#load blueprint for all objects
+# load blueprint for all objects
 blueprint_library = world.get_blueprint_library()
-#find a vehicle's blueprint(e.g. mercedes-benz)
+# find a vehicle's blueprint(e.g. mercedes-benz)
 ego_vehicle_bp = blueprint_library.find('vehicle.mercedes-benz.coupe')
-#choice a colar for the car
+# choice a colar for the car
 ```
 
 * After builing blueprint,we should set a birth point for the car.birth point not only can be set in a particular place,but also can be set in random place.The place we settle these cars must free space,for example we can't put a car on the tree or in the see.
 ```
-#Find all the positions that can be used as initial points and choose one at random
+# Find all the positions that can be used as initial points and choose one at random
 transform = random.choice(world.get_map().get_spawn_points())
-#spawn a car in this position
+# spawn a car in this position
 ego_vehicle = world.spawn_actor(ego_vehicle_bp, transform)
 ```
 ## Operate the car
 we can movie the car through definding its initial position&dynamic function
 ```
-#move the car
+# move the car
 location = ego_vehicle.get_location()
 location.x += 10.0
 ego_vehicle.set_location(location)
-#set the car into auto pattern
+# set the car into auto pattern
 ego_vehicle.set_autopilot(True)
 #we even can freeze the car throught kill its physics simulation
 # actor.set_simulate_physics(False)
@@ -95,9 +95,9 @@ ego_vehicle.set_autopilot(True)
 ## Destroy Actor
 Remember to destroy the car after running the script, otherwise it will always exist in the simulation world, which may affect the operation of other scripts
 ```
-#destory single Actor
+# destory single Actor
 ego_vehicle.destroy()
-#if you have many actors,you should put them into a list,and destroy them together
+# if you have many actors,you should put them into a list,and destroy them together
 client.apply_batch([carla.command.DestroyActor(x) for x in actor_list])
 ```
 
