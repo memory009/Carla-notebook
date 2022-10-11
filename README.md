@@ -4,7 +4,7 @@ Thanks for [Mr. Sihao Wu](https://github.com/WilliamWu96) and [Ms. Hanwei Zhang]
 
 ## Launching CARLA and connecting the client
 
-launch CARLA from the command line
+launch CARLA from the command line(2022.10.10)
 ```bash
 cd /carla-0.9.10.1
 ./CarlaUE4.sh                      # or use 'sh CarlaUE4.sh' to launch it
@@ -54,8 +54,8 @@ spectator.set_transform(carla.Transform())
 # pitch, yaw and roll - a good way to orient yourself in the map
 ```
 
-## Adding NPCs
-2022.10.10  under construction
+## Adding NPCs（2022.10.11  under construction）
+
 
 
 
