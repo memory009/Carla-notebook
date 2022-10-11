@@ -20,8 +20,6 @@ client = carla.Client('localhost', 2000)
 world = client.get_world()
 ```
 
-
-s
 The port can be chosen as any available port and is set to 2000 by default, you can also choose a host different from localhost by using a computer's IP address. This way, the CARLA server can be run on a networked machine, while the python client can be run from a personal computer. 
 
 ## Loading a map
@@ -100,6 +98,10 @@ ego_vehicle.destroy()
 # if you have many actors,you should put them into a list,and destroy them together
 client.apply_batch([carla.command.DestroyActor(x) for x in actor_list])
 ```
+
+## bulid sensor 
+we can put various of sensor in the car,so there are many carla's sensor.  
+you can learn more information about sensor in [here](https://carla.readthedocs.io/en/latest/python_api/)
 
 ## cautious
 ```bash
