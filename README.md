@@ -56,9 +56,22 @@ spectator.set_transform(carla.Transform())
 ```
 </s>
 
-## Adding NPCs（2022.10.11  under construction）
+## change the weather
+```bash
+weather = carla.WeatherParameters(cloudiness=10.0,
+                                  precipitation=10.0,
+                                  fog_density=10.0)
+world.set_weather(weather)
 
-
+## Adding Actor（2022.10.11  under construction）
+If you want to spawn(生成) Actors ，firstly you must defind its Blueprint
+```
+#load blueprint for all objects
+blueprint_library = world.get_blueprint_library()
+#find a vehicle's blueprint(e.g. mercedes-benz)
+ego_vehicle_bp = blueprint_library.find('vehicle.mercedes-benz.coupe')
+#choice a colar for the car
+```
 
 
 
