@@ -54,7 +54,7 @@ spectator.set_transform(carla.Transform())
 # This will set the spectator at the origin of the map, with 0 degrees
 # pitch, yaw and roll - a good way to orient yourself in the map
 ```
-<strike>
+</strike>
 
 ## Adding NPCs（2022.10.11  under construction）
 
