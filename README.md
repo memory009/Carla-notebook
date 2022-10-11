@@ -2,9 +2,9 @@
 Thanks for [Mr. Sihao Wu](https://github.com/WilliamWu96) and [Ms. Hanwei Zhang](https://github.com/hanwei0912)'s contribution to this project !
 
 
-## Launching CARLA and connecting the client
+## Launching CARLA and connecting the client(2022.10.10)
 
-launch CARLA from the command line(2022.10.10)
+launch CARLA from the command line
 ```bash
 cd /carla-0.9.10.1
 ./CarlaUE4.sh                      # or use 'sh CarlaUE4.sh' to launch it
