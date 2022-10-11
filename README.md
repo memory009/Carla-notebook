@@ -62,6 +62,7 @@ weather = carla.WeatherParameters(cloudiness=10.0,
                                   precipitation=10.0,
                                   fog_density=10.0)
 world.set_weather(weather)
+```
 
 ## Adding Actor（2022.10.11  under construction）
 If you want to spawn(生成) Actors ，firstly you must defind its Blueprint
